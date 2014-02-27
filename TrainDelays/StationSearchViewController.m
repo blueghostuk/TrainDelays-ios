@@ -10,11 +10,12 @@
 
 @interface StationSearchViewController ()
 
+@property (nonatomic) NSArray *searchResults;
+
 @end
 
 @implementation StationSearchViewController
 
-NSMutableArray *myObject;
 NSDictionary *dictionary;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,7 +32,8 @@ NSDictionary *dictionary;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    myObject = [[NSMutableArray alloc] init];
+    self.searchResults = [[NSMutableArray alloc] init];
+    self.stations = [[NSMutableArray alloc] init];
     
     NSData *jsonSource = [NSData dataWithContentsOfURL:
                           [NSURL URLWithString:@"http://api.trainnotifier.co.uk/Station/?apiName=td-ios"]];
@@ -50,7 +52,7 @@ NSDictionary *dictionary;
                       crsCode, @"crsCode",
                       Nil];
         
-        [myObject addObject:dictionary];
+        [self.stations addObject:dictionary];
     }
 }
 
@@ -61,7 +63,11 @@ NSDictionary *dictionary;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return myObject.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView){
+        return self.searchResults.count;
+    }else{
+        return self.stations.count;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -70,11 +76,30 @@ NSDictionary *dictionary;
     // dequeue a cell from self's table view
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCellID];
     
-    NSDictionary *tmDict = [myObject objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [tmDict objectForKeyedSubscript:@"stationName"];
+    if (tableView == self.searchDisplayController.searchResultsTableView){
+        NSDictionary *tmDict = [self.searchResults objectAtIndex:indexPath.row];
+        cell.textLabel.text = [tmDict objectForKeyedSubscript:@"stationName"];
+    }else{
+        NSDictionary *tmDict = [self.stations objectAtIndex:indexPath.row];
+        cell.textLabel.text = [tmDict objectForKeyedSubscript:@"stationName"];
+    }
     
     return cell;
+}
+                  
+-(void)filterContetnForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultsPredicate = [NSPredicate predicateWithFormat:@"stationName contains[c] %@ OR crsCode contains[c] %@", searchText, searchText];
+    self.searchResults = [self.stations filteredArrayUsingPredicate:resultsPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
+    [self filterContetnForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    return YES;
 }
 
 
