@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F63BEEA118C005E200FB3325 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63BEEA018C005E200FB3325 /* SearchResultsViewController.m */; };
 		F63C6CE118BE96770070FFA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63C6CE018BE96770070FFA1 /* Foundation.framework */; };
 		F63C6CE318BE96770070FFA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63C6CE218BE96770070FFA1 /* CoreGraphics.framework */; };
 		F63C6CE518BE96770070FFA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63C6CE418BE96770070FFA1 /* UIKit.framework */; };
@@ -14,13 +15,13 @@
 		F63C6CED18BE96770070FFA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F63C6CEC18BE96770070FFA1 /* main.m */; };
 		F63C6CF118BE96770070FFA1 /* TrainDelayedAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F63C6CF018BE96770070FFA1 /* TrainDelayedAppDelegate.m */; };
 		F63C6CF418BE96770070FFA1 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63C6CF218BE96770070FFA1 /* Main_iPhone.storyboard */; };
-		F63C6CF718BE96770070FFA1 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63C6CF518BE96770070FFA1 /* Main_iPad.storyboard */; };
 		F63C6CFF18BE96770070FFA1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63C6CFE18BE96770070FFA1 /* Images.xcassets */; };
 		F63C6D0618BE96770070FFA1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63C6D0518BE96770070FFA1 /* XCTest.framework */; };
 		F63C6D0718BE96770070FFA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63C6CE018BE96770070FFA1 /* Foundation.framework */; };
 		F63C6D0818BE96770070FFA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63C6CE418BE96770070FFA1 /* UIKit.framework */; };
 		F63C6D1018BE96770070FFA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F63C6D0E18BE96770070FFA1 /* InfoPlist.strings */; };
 		F63C6D1218BE96770070FFA1 /* TrainDelaysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F63C6D1118BE96770070FFA1 /* TrainDelaysTests.m */; };
+		F67E839118C0042500548BFD /* SearchFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F67E839018C0042500548BFD /* SearchFormViewController.m */; };
 		F6AA39E918BEB50A00CCAD6A /* StationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AA39E818BEB50A00CCAD6A /* StationSearchViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F63BEE9F18C005E200FB3325 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		F63BEEA018C005E200FB3325 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		F63C6CDD18BE96760070FFA1 /* TrainDelays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainDelays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63C6CE018BE96770070FFA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F63C6CE218BE96770070FFA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,13 +49,14 @@
 		F63C6CEF18BE96770070FFA1 /* TrainDelayedAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainDelayedAppDelegate.h; sourceTree = "<group>"; };
 		F63C6CF018BE96770070FFA1 /* TrainDelayedAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrainDelayedAppDelegate.m; sourceTree = "<group>"; };
 		F63C6CF318BE96770070FFA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		F63C6CF618BE96770070FFA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		F63C6CFE18BE96770070FFA1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F63C6D0418BE96770070FFA1 /* TrainDelaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainDelaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63C6D0518BE96770070FFA1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F63C6D0D18BE96770070FFA1 /* TrainDelaysTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrainDelaysTests-Info.plist"; sourceTree = "<group>"; };
 		F63C6D0F18BE96770070FFA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F63C6D1118BE96770070FFA1 /* TrainDelaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrainDelaysTests.m; sourceTree = "<group>"; };
+		F67E838F18C0042500548BFD /* SearchFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFormViewController.h; sourceTree = "<group>"; };
+		F67E839018C0042500548BFD /* SearchFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFormViewController.m; sourceTree = "<group>"; };
 		F6AA39E718BEB50A00CCAD6A /* StationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationSearchViewController.h; sourceTree = "<group>"; };
 		F6AA39E818BEB50A00CCAD6A /* StationSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,11 +121,14 @@
 				F63C6CEF18BE96770070FFA1 /* TrainDelayedAppDelegate.h */,
 				F63C6CF018BE96770070FFA1 /* TrainDelayedAppDelegate.m */,
 				F63C6CF218BE96770070FFA1 /* Main_iPhone.storyboard */,
-				F63C6CF518BE96770070FFA1 /* Main_iPad.storyboard */,
 				F63C6CFE18BE96770070FFA1 /* Images.xcassets */,
 				F63C6CE718BE96770070FFA1 /* Supporting Files */,
 				F6AA39E718BEB50A00CCAD6A /* StationSearchViewController.h */,
 				F6AA39E818BEB50A00CCAD6A /* StationSearchViewController.m */,
+				F67E838F18C0042500548BFD /* SearchFormViewController.h */,
+				F67E839018C0042500548BFD /* SearchFormViewController.m */,
+				F63BEE9F18C005E200FB3325 /* SearchResultsViewController.h */,
+				F63BEEA018C005E200FB3325 /* SearchResultsViewController.m */,
 			);
 			path = TrainDelays;
 			sourceTree = "<group>";
@@ -232,7 +239,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F63C6CF718BE96770070FFA1 /* Main_iPad.storyboard in Resources */,
 				F63C6CFF18BE96770070FFA1 /* Images.xcassets in Resources */,
 				F63C6CF418BE96770070FFA1 /* Main_iPhone.storyboard in Resources */,
 				F63C6CEB18BE96770070FFA1 /* InfoPlist.strings in Resources */,
@@ -255,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6AA39E918BEB50A00CCAD6A /* StationSearchViewController.m in Sources */,
+				F63BEEA118C005E200FB3325 /* SearchResultsViewController.m in Sources */,
 				F63C6CF118BE96770070FFA1 /* TrainDelayedAppDelegate.m in Sources */,
+				F67E839118C0042500548BFD /* SearchFormViewController.m in Sources */,
 				F63C6CED18BE96770070FFA1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,14 +301,6 @@
 				F63C6CF318BE96770070FFA1 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		F63C6CF518BE96770070FFA1 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F63C6CF618BE96770070FFA1 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		F63C6D0E18BE96770070FFA1 /* InfoPlist.strings */ = {
