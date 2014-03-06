@@ -42,7 +42,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cRM-SW-z2R" kind="push" id="lc6-Jo-0V0"/>
+                                    <segue destination="cRM-SW-z2R" kind="push" identifier="doSearchSegue" id="lc6-Jo-0V0"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="x1g-Vy-N7q">
@@ -76,6 +76,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ih-YL-Bn3">
                                 <rect key="frame" x="20" y="102" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Click to select From Station"/>
                                 <state key="normal" title="From Station:"/>
                                 <connections>
                                     <segue destination="zxd-ga-lBP" kind="push" identifier="fromStationSegue" id="bru-ID-s2B"/>
@@ -84,6 +85,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcQ-wx-gza">
                                 <rect key="frame" x="20" y="130" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Click to select To Station"/>
                                 <state key="normal" title="To Station:">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -97,6 +99,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Enter Search Criteria" prompt="Train Delays" id="2he-0z-dIT">
                         <barButtonItem key="backBarButtonItem" title="Back" id="zFj-S7-YxE"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="x1g-Vy-N7q" id="HUJ-ZE-56j"/>
+                        <outlet property="fromStationBtn" destination="6Ih-YL-Bn3" id="tep-bE-Krs"/>
+                        <outlet property="toStationBtn" destination="AcQ-wx-gza" id="RiP-Xs-QCw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83z-ya-EUh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,13 +123,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StationCellId" id="FzK-WK-4uE">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StationCellId" id="FzK-WK-4uE" customClass="TrainDelayedCell">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FzK-WK-4uE" id="wZ9-4d-pvY">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" hint="Click to Select this Station"/>
                                 <connections>
                                     <segue destination="OJl-hM-hVN" kind="push" id="eLM-R8-bjC"/>
                                 </connections>
@@ -190,6 +198,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="eLM-R8-bjC"/>
-        <segue reference="bru-ID-s2B"/>
+        <segue reference="Jpf-Jz-Q0Q"/>
     </inferredMetricsTieBreakers>
 </document>

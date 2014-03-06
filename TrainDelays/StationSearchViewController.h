@@ -11,5 +11,6 @@
 @interface StationSearchViewController : UITableViewController<UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (nonatomic) NSMutableArray *stations;
+@property (nonatomic) NSInteger mode;
 
 @end

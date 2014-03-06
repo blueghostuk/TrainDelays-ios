@@ -7,6 +7,8 @@
 //
 
 #import "StationSearchViewController.h"
+#import "SearchFormViewController.h"
+#import "TrainDelayedCell.h"
 
 @interface StationSearchViewController ()
 
@@ -74,15 +76,16 @@ NSDictionary *dictionary;
     static NSString *kCellID = @"StationCellId";
     
     // dequeue a cell from self's table view
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCellID];
-    
+    TrainDelayedCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCellID];
     
     if (tableView == self.searchDisplayController.searchResultsTableView){
         NSDictionary *tmDict = [self.searchResults objectAtIndex:indexPath.row];
         cell.textLabel.text = [tmDict objectForKeyedSubscript:@"stationName"];
+        cell.crsCode = [tmDict objectForKeyedSubscript:@"crsCode"];
     }else{
         NSDictionary *tmDict = [self.stations objectAtIndex:indexPath.row];
         cell.textLabel.text = [tmDict objectForKeyedSubscript:@"stationName"];
+        cell.crsCode = [tmDict objectForKeyedSubscript:@"crsCode"];
     }
     
     return cell;
@@ -100,6 +103,23 @@ NSDictionary *dictionary;
                                       objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
     
     return YES;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    TrainDelayedCell *cell = (TrainDelayedCell *) [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    SearchFormViewController *transferController = segue.destinationViewController;
+    switch(self.mode){
+            // to
+        case 1:
+            transferController.toStationCRS = cell.crsCode;
+            transferController.toStationText = cell.textLabel.text;
+            break;
+        // from
+        case 0:
+            transferController.fromStationCRS = cell.crsCode;
+            transferController.fromStationText = cell.textLabel.text;
+            break;
+    }
 }
 
 

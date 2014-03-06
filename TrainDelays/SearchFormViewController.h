@@ -10,4 +10,13 @@
 
 @interface SearchFormViewController : UIViewController
 
+@property (strong, nonatomic)           NSString *fromStationText;
+@property (strong, nonatomic)           NSString *fromStationCRS;
+@property (strong, nonatomic)           NSString *toStationText;
+@property (strong, nonatomic)           NSString *toStationCRS;
+
+@property (weak, nonatomic) IBOutlet    UIButton *fromStationBtn;
+@property (weak, nonatomic) IBOutlet    UIButton *toStationBtn;
+@property (weak, nonatomic) IBOutlet    UIDatePicker *datePicker;
+
 @end

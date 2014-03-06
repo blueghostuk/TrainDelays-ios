@@ -10,4 +10,8 @@
 
 @interface SearchResultsViewController : UITableViewController
 
+@property (strong, nonatomic)           NSString *fromStationCRS;
+@property (strong, nonatomic)           NSString *toStationCRS;
+@property (strong, nonatomic)           NSDate *searchTime;
+
 @end
