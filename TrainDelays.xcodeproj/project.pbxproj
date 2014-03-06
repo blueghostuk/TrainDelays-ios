@@ -22,6 +22,7 @@
 		F63C6D1018BE96770070FFA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F63C6D0E18BE96770070FFA1 /* InfoPlist.strings */; };
 		F63C6D1218BE96770070FFA1 /* TrainDelaysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F63C6D1118BE96770070FFA1 /* TrainDelaysTests.m */; };
 		F67E839118C0042500548BFD /* SearchFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F67E839018C0042500548BFD /* SearchFormViewController.m */; };
+		F6996FCB18C92DF40006DF2E /* TrainDelayedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6996FCA18C92DF40006DF2E /* TrainDelayedCell.m */; };
 		F6AA39E918BEB50A00CCAD6A /* StationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AA39E818BEB50A00CCAD6A /* StationSearchViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,8 @@
 		F63C6D1118BE96770070FFA1 /* TrainDelaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrainDelaysTests.m; sourceTree = "<group>"; };
 		F67E838F18C0042500548BFD /* SearchFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFormViewController.h; sourceTree = "<group>"; };
 		F67E839018C0042500548BFD /* SearchFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFormViewController.m; sourceTree = "<group>"; };
+		F6996FC918C92DF40006DF2E /* TrainDelayedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainDelayedCell.h; path = ../TrainDelayedCell.h; sourceTree = "<group>"; };
+		F6996FCA18C92DF40006DF2E /* TrainDelayedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainDelayedCell.m; path = ../TrainDelayedCell.m; sourceTree = "<group>"; };
 		F6AA39E718BEB50A00CCAD6A /* StationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationSearchViewController.h; sourceTree = "<group>"; };
 		F6AA39E818BEB50A00CCAD6A /* StationSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +121,8 @@
 		F63C6CE618BE96770070FFA1 /* TrainDelays */ = {
 			isa = PBXGroup;
 			children = (
+				F6996FC918C92DF40006DF2E /* TrainDelayedCell.h */,
+				F6996FCA18C92DF40006DF2E /* TrainDelayedCell.m */,
 				F63C6CEF18BE96770070FFA1 /* TrainDelayedAppDelegate.h */,
 				F63C6CF018BE96770070FFA1 /* TrainDelayedAppDelegate.m */,
 				F63C6CF218BE96770070FFA1 /* Main_iPhone.storyboard */,
@@ -263,6 +268,7 @@
 				F6AA39E918BEB50A00CCAD6A /* StationSearchViewController.m in Sources */,
 				F63BEEA118C005E200FB3325 /* SearchResultsViewController.m in Sources */,
 				F63C6CF118BE96770070FFA1 /* TrainDelayedAppDelegate.m in Sources */,
+				F6996FCB18C92DF40006DF2E /* TrainDelayedCell.m in Sources */,
 				F67E839118C0042500548BFD /* SearchFormViewController.m in Sources */,
 				F63C6CED18BE96770070FFA1 /* main.m in Sources */,
 			);
