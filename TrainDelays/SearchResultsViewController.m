@@ -28,12 +28,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.searchResults = [[NSMutableArray alloc] init];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-ddTHH:mm"];
+    
+    NSData *jsonSource = [NSData dataWithContentsOfURL:
+                          [NSURL URLWithString: [NSString stringWithFormat:@"http://api.trainnotifier.co.uk/TrainMovement/Between/Station/%@/%@/?apiName=td-ios&startDate=%@",
+                                                 self.fromStationCRS, self.toStationCRS, self.searchTime, [dateFormatter stringFromDate:self.searchTime]]]];
+    
+    
+    id jsonObjects = [NSJSONSerialization JSONObjectWithData:
+                      jsonSource options:NSJSONReadingMutableContainers error:Nil];
+    
+    NSDictionary *movements = [jsonObjects objectForKey:@"Movements"];
+    NSDictionary *tiplocs = [jsonObjects objectForKey:@"Tiplocs"];
 }
 
 - (void)didReceiveMemoryWarning

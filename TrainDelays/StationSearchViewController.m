@@ -106,7 +106,7 @@ NSDictionary *dictionary;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    TrainDelayedCell *cell = (TrainDelayedCell *) [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    TrainDelayedCell *cell = (TrainDelayedCell *) sender;
     SearchFormViewController *transferController = segue.destinationViewController;
     switch(self.mode){
             // to
